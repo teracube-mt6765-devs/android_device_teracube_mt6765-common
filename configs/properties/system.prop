@@ -3,6 +3,9 @@
 #
 ro.product.property_source_order=odm,vendor,product,system
 
+# Dex2oat
+dalvik.vm.dex2oat64.enabled=true
+
 vendor.rild.libpath=mtk-ril.so
 vendor.rild.libargs=-d /dev/ttyC0
 
