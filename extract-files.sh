@@ -65,6 +65,9 @@ fi
 
 function blob_fixup {
     case "${1}" in
+        lib/libsink.so)
+            "${PATCHELF}" --add-needed "libshim_vtservice.so" "${2}"
+            ;;
         vendor/lib/hw/audio.primary.mt6765.so)
             "${PATCHELF}" --replace-needed "libmedia_helper.so" "libmedia_helper-v30.so" "${2}"
             ;;
