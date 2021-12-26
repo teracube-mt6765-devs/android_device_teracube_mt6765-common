@@ -299,6 +299,9 @@ PRODUCT_BOOT_JARS += \
     mediatek-telephony-base \
     mediatek-telephony-common
 
+PRODUCT_PACKAGES += \
+    libshim_vtservice
+
 # Runtime Configuration and fstab
 PRODUCT_PACKAGES += \
     init.aee.rc \
