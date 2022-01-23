@@ -515,6 +515,7 @@ vendor/etc/init/microtrust.init_thh.rc
 vendor/etc/init/microtrust.rc
 vendor/etc/init/nvram_daemon.rc
 vendor/etc/init/vendor.microtrust.hardware.thh@2.0-service.rc
+vendor/etc/init/android.hardware.wifi.supplicant-service.rc
 vendor/etc/partition_permission.sh
 vendor/etc/init/hw/factory_init.connectivity.rc
 vendor/etc/init/hw/factory_init.project.rc
