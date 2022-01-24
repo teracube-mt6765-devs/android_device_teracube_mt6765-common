@@ -1,4 +1,9 @@
+#include <android-base/file.h>
+#include <android-base/strings.h>
+#include <android-base/unique_fd.h>
 #include <fcntl.h>
+#include <libdm/dm.h>
+#include <log/log.h>
 #include <stdint.h>
 #include <stdio.h>
 #include <sys/ioctl.h>
@@ -13,38 +18,33 @@
 #include <map>
 #include <thread>
 
-#include <android-base/file.h>
-#include <android-base/strings.h>
-#include <android-base/unique_fd.h>
-#include <log/log.h>
-#include <libdm/dm.h>
-
 using namespace std::literals::string_literals;
 using namespace android::dm;
 
-#define NAME_PL_A  "pl_a"
-#define NAME_PL_B  "pl_b"
-#define EMMC_PL_A  "/dev/block/mmcblk0boot0"
-#define EMMC_PL_B  "/dev/block/mmcblk0boot1"
-#define EMMC_DEV   "/sys/class/block/mmcblk0boot0/uevent"
-#define UFS_PL_A   "/dev/block/sda"
-#define UFS_PL_B   "/dev/block/sdb"
-#define UFS_DEV    "/sys/class/block/sda/uevent"
-#define LINK_PL_A  "/dev/block/by-name/preloader_raw_a"
-#define LINK_PL_B  "/dev/block/by-name/preloader_raw_b"
+#define NAME_PL_A "pl_a"
+#define NAME_PL_B "pl_b"
+#define EMMC_PL_A "/dev/block/mmcblk0boot0"
+#define EMMC_PL_B "/dev/block/mmcblk0boot1"
+#define EMMC_DEV "/sys/class/block/mmcblk0boot0/uevent"
+#define UFS_PL_A "/dev/block/sda"
+#define UFS_PL_B "/dev/block/sdb"
+#define UFS_DEV "/sys/class/block/sda/uevent"
+#define LINK_PL_A "/dev/block/by-name/preloader_raw_a"
+#define LINK_PL_B "/dev/block/by-name/preloader_raw_b"
 #define LINK1_PL_A "/dev/block/platform/bootdevice/by-name/preloader_raw_a"
 #define LINK1_PL_B "/dev/block/platform/bootdevice/by-name/preloader_raw_b"
 #define DM_BLK_SIZE (512)
 
-#define PLHEAD    "MMM"
-#define UFSHEAD   "UFS"
-#define EMMCHEAD  "EMMC"
+#define PLHEAD "MMM"
+#define UFSHEAD "UFS"
+#define EMMCHEAD "EMMC"
 #define COMBOHEAD "COMB"
-#define EMMCHSZ   (0x800)
-#define UFSHSZ    (0x1000)
-#define BLKSZ     (512)
+#define EMMCHSZ (0x800)
+#define UFSHSZ (0x1000)
+#define BLKSZ (512)
 
-static int create_dm(const char *device, const char *name, std::string *path, int start_blk, int blk_cnt) {
+static int create_dm(const char *device, const char *name, std::string *path, int start_blk,
+                     int blk_cnt) {
     DmTable table;
     std::unique_ptr<DmTarget> target;
 
@@ -59,7 +59,7 @@ static int create_dm(const char *device, const char *name, std::string *path, in
         ALOGE("Add target fail(%s)", strerror(errno));
         return 1;
     }
-    DeviceMapper& dm = DeviceMapper::Instance();
+    DeviceMapper &dm = DeviceMapper::Instance();
     if (!dm.CreateDevice(name, table, path, std::chrono::milliseconds(500))) {
         ALOGE("Create %s on %s fail(%s)", name, device, strerror(errno));
         return 1;
@@ -68,8 +68,7 @@ static int create_dm(const char *device, const char *name, std::string *path, in
     return 0;
 }
 
-static void create_pl_link(std::string link, std::string devpath)
-{
+static void create_pl_link(std::string link, std::string devpath) {
     std::string link_path;
 
     if (android::base::Readlink(link, &link_path) && link_path != devpath) {
@@ -87,7 +86,7 @@ void create_pl_path(void) {
     off_t pl_size;
     char header_desc[5];
     std::string path_a, path_b, link_path, dev_path, link;
-    DeviceMapper& dm = DeviceMapper::Instance();
+    DeviceMapper &dm = DeviceMapper::Instance();
     ssize_t sz = 0;
 
     if (!access(EMMC_DEV, F_OK)) {
@@ -109,7 +108,7 @@ void create_pl_path(void) {
         return;
     }
     ALOGE("isEmmc = %d, pl_size: %d\n", isEmmc, pl_size);
-    blk_cnt = pl_size/DM_BLK_SIZE;
+    blk_cnt = pl_size / DM_BLK_SIZE;
 
     if (lseek(fd, 0, SEEK_SET)) {
         ALOGE("lseek to head fail(%s)\n", strerror(errno));
@@ -125,12 +124,12 @@ void create_pl_path(void) {
         ALOGE("%s size is not header_desc\n", __func__);
     close(fd);
 
-    header_desc[sizeof(header_desc)-1] = 0;
+    header_desc[sizeof(header_desc) - 1] = 0;
     if (!strncmp(header_desc, EMMCHEAD, strlen(EMMCHEAD))) {
-        start_blk = EMMCHSZ/BLKSZ;
-    } else if (!strncmp(header_desc, UFSHEAD, strlen(UFSHEAD))
-        || !strncmp(header_desc, COMBOHEAD, strlen(COMBOHEAD))) {
-        start_blk = UFSHSZ/BLKSZ;
+        start_blk = EMMCHSZ / BLKSZ;
+    } else if (!strncmp(header_desc, UFSHEAD, strlen(UFSHEAD)) ||
+               !strncmp(header_desc, COMBOHEAD, strlen(COMBOHEAD))) {
+        start_blk = UFSHSZ / BLKSZ;
     } else {
         ALOGE("Invalid header %s", header_desc);
         return;
@@ -164,7 +163,7 @@ void create_pl_path(void) {
     return;
 }
 
-int main(int argc, char** argv) {
+int main(int argc, char **argv) {
     create_pl_path();
     return 0;
 }
