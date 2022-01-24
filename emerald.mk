@@ -261,6 +261,19 @@ PRODUCT_PACKAGES += \
 
 # RIL
 PRODUCT_PACKAGES += \
+    android.hardware.broadcastradio@1.0 \
+    android.hardware.broadcastradio@1.1 \
+    android.hardware.radio@1.0 \
+    android.hardware.radio@1.1 \
+    android.hardware.radio@1.2 \
+    android.hardware.radio@1.3 \
+    android.hardware.radio@1.4 \
+    android.hardware.radio@1.5 \
+    android.hardware.radio.config@1.1 \
+    android.hardware.radio.config@1.2 \
+    android.hardware.radio.deprecated@1.0
+
+PRODUCT_PACKAGES += \
     libprotobuf-cpp-full \
     libprotobuf-cpp-full-vendorcompat \
     libprotobuf-cpp-lite-vendorcompat
@@ -290,7 +303,8 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/seccomp/mediaswcodec.policy:$(TARGET_COPY_OUT_VENDOR)/etc/seccomp_policy/mediaswcodec.policy
 
 # Sensors
-PRODUCT_PACKAGES += libsensorndkbridge
+PRODUCT_PACKAGES += \
+    libsensorndkbridge
 
 # Thermal
 PRODUCT_PACKAGES += \
@@ -315,7 +329,7 @@ PRODUCT_PACKAGES += \
     libwpa_client \
     wpa_supplicant \
     android.hardware.wifi@1.0-service-lazy \
-    android.hardware.wifi.hostapd
+    android.hardware.wifi.supplicant@1.0
 
 PRODUCT_PACKAGES += \
     TetheringConfigOverlay \
