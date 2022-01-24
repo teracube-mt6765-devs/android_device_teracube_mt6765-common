@@ -223,6 +223,8 @@ PRODUCT_COPY_FILES += \
 
 PRODUCT_PACKAGES += \
     libminijail \
+    libavservices_minijail \
+    libavservices_minijail.vendor \
     com.android.media.swcodec \
     libsfplugin_ccodec
 
