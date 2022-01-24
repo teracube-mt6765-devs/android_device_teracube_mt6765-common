@@ -23,13 +23,13 @@ namespace V1_0 {
 namespace implementation {
 
 // Methods from ::android::hardware::fastboot::V1_0::IFastboot follow.
-Return<void> Fastboot::getPartitionType(const hidl_string& /* partitionName */,
+Return<void> Fastboot::getPartitionType(const hidl_string & /* partitionName */,
                                         getPartitionType_cb _hidl_cb) {
     _hidl_cb(FileSystemType::RAW, {Status::SUCCESS, ""});
     return Void();
 }
 
-Return<void> Fastboot::doOemCommand(const hidl_string& /* oemCmd */, doOemCommand_cb _hidl_cb) {
+Return<void> Fastboot::doOemCommand(const hidl_string & /* oemCmd */, doOemCommand_cb _hidl_cb) {
     _hidl_cb({Status::FAILURE_UNKNOWN, "Command not supported in default implementation"});
     return Void();
 }
@@ -45,12 +45,12 @@ Return<void> Fastboot::getOffModeChargeState(getOffModeChargeState_cb _hidl_cb) 
 }
 
 Return<void> Fastboot::getBatteryVoltageFlashingThreshold(
-        getBatteryVoltageFlashingThreshold_cb _hidl_cb) {
+    getBatteryVoltageFlashingThreshold_cb _hidl_cb) {
     _hidl_cb(0, {Status::SUCCESS, ""});
     return Void();
 }
 
-extern "C" IFastboot* HIDL_FETCH_IFastboot(const char* /* name */) {
+extern "C" IFastboot *HIDL_FETCH_IFastboot(const char * /* name */) {
     return new Fastboot();
 }
 

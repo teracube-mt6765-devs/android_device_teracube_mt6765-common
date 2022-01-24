@@ -30,16 +30,16 @@ using ::android::hardware::Void;
 
 struct Fastboot : public IFastboot {
     // Methods from ::android::hardware::fastboot::V1_0::IFastboot follow.
-    Return<void> getPartitionType(const hidl_string& partitionName,
+    Return<void> getPartitionType(const hidl_string &partitionName,
                                   getPartitionType_cb _hidl_cb) override;
-    Return<void> doOemCommand(const hidl_string& oemCmd, doOemCommand_cb _hidl_cb) override;
+    Return<void> doOemCommand(const hidl_string &oemCmd, doOemCommand_cb _hidl_cb) override;
     Return<void> getVariant(getVariant_cb _hidl_cb) override;
     Return<void> getOffModeChargeState(getOffModeChargeState_cb _hidl_cb) override;
     Return<void> getBatteryVoltageFlashingThreshold(
-            getBatteryVoltageFlashingThreshold_cb _hidl_cb) override;
+        getBatteryVoltageFlashingThreshold_cb _hidl_cb) override;
 };
 
-extern "C" IFastboot* HIDL_FETCH_IFastboot(const char* name);
+extern "C" IFastboot *HIDL_FETCH_IFastboot(const char *name);
 
 }  // namespace implementation
 }  // namespace V1_0
