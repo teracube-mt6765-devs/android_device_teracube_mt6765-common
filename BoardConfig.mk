@@ -18,13 +18,9 @@ DEVICE_PATH := device/teracube/emerald
 AB_OTA_UPDATER := true
 AB_OTA_PARTITIONS += \
     boot \
-    dtbo \
     product \
     system \
-    vendor \
-    vbmeta \
-    vbmeta_system \
-    vbmeta_vendor
+    vendor
 
 # Architecture
 TARGET_ARCH := arm64
@@ -38,6 +34,7 @@ TARGET_2ND_ARCH := arm
 TARGET_2ND_ARCH_VARIANT := armv8-a
 TARGET_2ND_CPU_ABI := armeabi-v7a
 TARGET_2ND_CPU_ABI2 := armeabi
+
 TARGET_BOARD_PLATFORM := mt6765
 
 # Asserts
@@ -85,6 +82,10 @@ BOARD_CHARGER_ENABLE_SUSPEND := true
 
 # Display
 TARGET_USES_HWC2 := true
+
+# Encryption
+BOARD_ROOT_EXTRA_FOLDERS += metadata
+BOARD_USES_METADATA_PARTITION := true
 
 # FM
 BOARD_HAVE_MTK_FM := true
@@ -147,8 +148,6 @@ TARGET_COPY_OUT_PRODUCT := product
 TARGET_COPY_OUT_SYSTEM := system
 TARGET_COPY_OUT_VENDOR := vendor
 
-BOARD_ROOT_EXTRA_FOLDERS += metadata
-
 # Properties
 TARGET_SYSTEM_PROP += $(DEVICE_PATH)/configs/properties/system.prop
 TARGET_VENDOR_PROP += $(DEVICE_PATH)/configs/properties/vendor.prop
@@ -163,6 +162,10 @@ TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/etc/fstab.mt6765
 TARGET_RECOVERY_PIXEL_FORMAT := "BGRA_8888"
 TARGET_RECOVERY_UI_MARGIN_HEIGHT := 100
 TARGET_USERIMAGES_USE_F2FS := true
+
+# Security Patch Level
+VENDOR_SECURITY_PATCH := 2021-11-05
+BOOT_SECURITY_PATCH := 2019-06-06
 
 # SEPolicy
 -include device/mediatek/sepolicy/SEPolicy.mk
