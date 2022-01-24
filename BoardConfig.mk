@@ -86,6 +86,9 @@ BOARD_CHARGER_ENABLE_SUSPEND := true
 # Display
 TARGET_USES_HWC2 := true
 
+# FM
+BOARD_HAVE_MTK_FM := true
+
 # Hacks
 BUILD_BROKEN_DUP_RULES := true
 
