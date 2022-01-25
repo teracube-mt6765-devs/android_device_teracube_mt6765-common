@@ -743,11 +743,13 @@ vendor/firmware/soc3_0_ram_mcu_1_1_hdr.bin
 vendor/firmware/soc3_0_ram_mcu_e1_hdr.bin
 
 # FM
--system_ext/lib64/libfmjni.so
 vendor/etc/init/init.fmradio_drv.rc
 vendor/firmware/fm_cust.cfg
 vendor/firmware/mt6631_fm_v1_coeff.bin
 vendor/firmware/mt6631_fm_v1_patch.bin
+
+# FM-Interface - from modified stack
+-system_ext/lib64/libfmjni.so|055d50773467e480974571d18ef928da1e1e94c7
 
 # Fuelgauged
 vendor/bin/fuelgauged
