@@ -1261,6 +1261,12 @@ vendor/lib64/vendor.mediatek.hardware.nvram@1.1.so
 vendor/lib64/hw/vendor.mediatek.hardware.nvram@1.1-impl.so
 
 # Power
+lib/libperfctl.so
+lib/libpowerhalwrap_jni.so
+lib/libpowerhalwrap.so
+lib64/libperfctl.so
+lib64/libpowerhalwrap_jni.so
+lib64/libpowerhalwrap.so
 system_ext/lib/vendor.mediatek.hardware.mtkpower@1.0.so
 system_ext/lib/vendor.mediatek.hardware.mtkpower@1.1.so
 system_ext/lib64/vendor.mediatek.hardware.mtkpower@1.0.so
