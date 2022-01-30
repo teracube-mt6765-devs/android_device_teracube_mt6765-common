@@ -48,4 +48,9 @@
     <!-- Indicates that wifi link probing is supported on this device -->
     <bool name="config_wifi_link_probing_supported">true</bool>
 
+    <!-- Wifi driver supports 2.4GHz band for softap when chip support 2.4GHz -->
+    <bool name="config_wifiSoftap24ghzSupported">true</bool>
+
+    <!-- Wifi driver supports 5GHz band for softap when chip support 5GHz -->
+    <bool name="config_wifiSoftap5ghzSupported">true</bool>
 </resources>
