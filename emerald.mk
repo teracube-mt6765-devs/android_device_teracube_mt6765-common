@@ -262,8 +262,7 @@ DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay-lineage
 PRODUCT_PACKAGES += \
     EmeraldFrameworks \
     EmeraldSystemUI \
-    EmeraldTelephony \
-    EmeraldBluetooth
+    EmeraldTelephony
 
 # Partitions
 PRODUCT_BUILD_SUPER_PARTITION := true
