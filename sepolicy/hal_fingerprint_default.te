@@ -1,0 +1,17 @@
+type fpsensor_fp_device, dev_type;
+type fp_ext_svc2_service, hwservice_manager_type;
+
+allow hal_fingerprint_default fpsensor_fp_device:chr_file {open read write ioctl};
+allow hal_fingerprint_default fuse:dir {search};
+allow hal_fingerprint_default mnt_user_file:dir {search};
+allow hal_fingerprint_default mnt_user_file:lnk_file {read};
+allow hal_fingerprint_default storage_file:lnk_file {read};
+allow hal_fingerprint_default uhid_device:chr_file {open ioctl write read};
+
+allow hal_fingerprint_default  fp_ext_svc2_service:hwservice_manager {add};
+allow platform_app     fp_ext_svc2_service:hwservice_manager {find};
+allow platform_app      hal_fingerprint_default:binder {call transfer};
+allow hal_fingerprint_default platform_app:binder {call};
+allow untrusted_app_29     fp_ext_svc2_service:hwservice_manager {find};
+allow untrusted_app_29     hal_fingerprint_default:binder {call transfer};
+allow hal_fingerprint_default     untrusted_app_29:binder {call transfer};
