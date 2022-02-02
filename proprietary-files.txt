@@ -961,7 +961,6 @@ vendor/lib64/libmnetlink_v104.so
 vendor/lib64/libmsbc_mtk.so
 vendor/lib64/libmsnr.so
 vendor/lib64/libmtcloader.so
-vendor/lib64/libpcap.so
 vendor/lib64/libratconfig.so
 vendor/lib64/librilfusion.so
 vendor/lib64/libsimaka.so

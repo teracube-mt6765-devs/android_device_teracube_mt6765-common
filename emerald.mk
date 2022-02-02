@@ -299,6 +299,9 @@ PRODUCT_PACKAGES += \
     android.hardware.radio.deprecated@1.0
 
 PRODUCT_PACKAGES += \
+    libpcap.vendor
+
+PRODUCT_PACKAGES += \
     libprotobuf-cpp-full \
     libprotobuf-cpp-full-vendorcompat \
     libprotobuf-cpp-lite-vendorcompat
