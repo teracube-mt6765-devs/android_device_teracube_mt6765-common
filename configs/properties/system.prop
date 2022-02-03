@@ -25,19 +25,8 @@ wifi.direct.interface=p2p0
 #dalvik.vm.heapgrowthlimit=256m
 #dalvik.vm.heapsize=512m
 
-# USB MTP WHQL
-ro.sys.usb.mtp.whql.enable=0
-
 # Power off opt in IPO
 sys.ipo.pwrdncap=2
-
-ro.sys.usb.storage.type=mtp
-
-# USB BICR function
-ro.sys.usb.bicr=no
-
-# USB Charge only function
-ro.sys.usb.charging.only=yes
 
 # audio
 ro.camera.sound.forced=0
@@ -56,7 +45,6 @@ ro.kernel.zio=38,108,105,16
 # Disable dirty region for Mali
 #debug.hwui.render_dirty_regions=false
 
-
 # performance
 ro.mtk_perf_simple_start_win=1
 ro.mtk_perf_fast_start_win=1
@@ -67,9 +55,6 @@ sys.ipo.disable=1
 
 # identity
 Build.BRAND=MTK
-
-# Disable iorapd
-ro.iorapd.enable=false
 
 ro.hx_google_key_tee_key_check=0
 # end of device/mediatek/system/common/system.prop
