@@ -1199,7 +1199,6 @@ vendor/lib64/libneuropilot_hal_utils.so
 # NFC
 etc/nfcee_access.xml
 -system_ext/app/Nfc_st/Nfc_st.apk
--system_ext/app/STNFCDta/STNFCDta.apk
 system_ext/etc/permissions/com.nxp.mifare.xml
 system_ext/etc/permissions/com.st.android.nfc_extensions.xml
 system_ext/etc/permissions/system-ext-permissions-mediatek.xml
