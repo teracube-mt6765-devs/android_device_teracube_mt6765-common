@@ -1214,9 +1214,6 @@ system_ext/lib64/libstnfc_nci_jni.so
 vendor/bin/STFlashTool
 vendor/bin/st_factorytests-vendor
 vendor/bin/nfcstackp-vendor
-vendor/etc/libnfc-hal-st.conf
-vendor/etc/libnfc-nci.conf
-vendor/etc/st21nfc_conf.txt
 vendor/firmware/st21nfc_fw7.bin
 vendor/lib/nfc_nci.st21nfc.st.so
 vendor/lib64/nfc_nci.st21nfc.st.so
