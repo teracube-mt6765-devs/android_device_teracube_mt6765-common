@@ -16,6 +16,9 @@
 
 PRODUCT_SOONG_NAMESPACES += $(LOCAL_PATH)
 
+# Scatter file
+TARGET_SCATTERFILE := $(LOCAL_PATH)/configs/MT6765_Android_scatter.txt
+
 # Shipping API Level
 PRODUCT_SHIPPING_API_LEVEL := 30
 
