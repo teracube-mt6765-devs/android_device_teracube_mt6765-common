@@ -605,6 +605,11 @@ vendor/etc/init/init.cccirpcd.rc
 vendor/lib/libccci_util.so
 vendor/lib64/libccci_util.so
 
+# Charger
+bin/kpoc_charger
+etc/init/kpoc_charger.rc
+lib/libshowlogo.so
+
 # Crypto
 system_ext/lib/libcmdl_ndk.mtk.so
 system_ext/lib/libcipher_utils.so
