@@ -24,6 +24,7 @@
 
 #include <inttypes.h>
 #include <unistd.h>
+#include <cutils/properties.h>
 
 namespace android {
 namespace hardware {
@@ -35,6 +36,13 @@ namespace implementation {
 // Supported fingerprint HAL version
 static const uint16_t kVersion = HARDWARE_MODULE_API_VERSION(2, 1);
 
+#define FPSENSOR_FINGERPRINT_HARDWARE_MODULE_ID     "fpsensor_fingerprint"
+static const char *variant_keys[] = {
+    FPSENSOR_FINGERPRINT_HARDWARE_MODULE_ID,
+    FINGERPRINT_HARDWARE_MODULE_ID,
+};
+static const int FP_VARIANT_KEYS_COUNT = (sizeof(variant_keys)/sizeof(variant_keys[0]));
+#define FPTAG "fpCorefpd"
 using RequestStatus =
         android::hardware::biometrics::fingerprint::V2_1::RequestStatus;
 
@@ -214,46 +222,49 @@ IBiometricsFingerprint* BiometricsFingerprint::getInstance() {
 fingerprint_device_t* BiometricsFingerprint::openHal() {
     int err;
     const hw_module_t *hw_mdl = nullptr;
+    fingerprint_device_t* fp_device = nullptr;
     ALOGD("Opening fingerprint hal library...");
-    if (0 != (err = hw_get_module(FINGERPRINT_HARDWARE_MODULE_ID, &hw_mdl))) {
-        ALOGE("Can't open fingerprint HW Module, error: %d", err);
-        return nullptr;
-    }
+    for(int i = 0; i < FP_VARIANT_KEYS_COUNT; i++) {
+        if (0 != (err = hw_get_module(variant_keys[i], &hw_mdl))) {
+            ALOGE("Can't open fingerprint HW Module, error: %d", err);
+            continue;
+        }
 
-    if (hw_mdl == nullptr) {
-        ALOGE("No valid fingerprint module");
-        return nullptr;
-    }
+        if (hw_mdl == nullptr) {
+            ALOGE("No valid fingerprint module");
+            continue;
+        }
 
-    fingerprint_module_t const *module =
-        reinterpret_cast<const fingerprint_module_t*>(hw_mdl);
-    if (module->common.methods->open == nullptr) {
-        ALOGE("No valid open method");
-        return nullptr;
-    }
+        fingerprint_module_t const *module =
+            reinterpret_cast<const fingerprint_module_t*>(hw_mdl);
+        if (module->common.methods->open == nullptr) {
+            ALOGE("No valid open method");
+            continue;
+        }
 
     hw_device_t *device = nullptr;
 
-    if (0 != (err = module->common.methods->open(hw_mdl, nullptr, &device))) {
-        ALOGE("Can't open fingerprint methods, error: %d", err);
-        return nullptr;
+        if (0 != (err = module->common.methods->open(hw_mdl, nullptr, &device))) {
+            ALOGE("Can't open fingerprint methods, error: %d", err);
+            continue;
+        }
+
+        if (kVersion != device->version) {
+            // enforce version on new devices because of HIDL@2.1 translation layer
+            ALOGE("Wrong fp version. Expected %d, got %d", kVersion, device->version);
+            continue;
+        }
+
+        fp_device = reinterpret_cast<fingerprint_device_t*>(device);
+        if (0 != (err =
+                fp_device->set_notify(fp_device, BiometricsFingerprint::notify))) {
+            ALOGE("Can't register fingerprint module callback, error: %d", err);
+            fp_device = nullptr;
+            continue;
+        }
+
+        break;
     }
-
-    if (kVersion != device->version) {
-        // enforce version on new devices because of HIDL@2.1 translation layer
-        ALOGE("Wrong fp version. Expected %d, got %d", kVersion, device->version);
-        return nullptr;
-    }
-
-    fingerprint_device_t* fp_device =
-        reinterpret_cast<fingerprint_device_t*>(device);
-
-    if (0 != (err =
-            fp_device->set_notify(fp_device, BiometricsFingerprint::notify))) {
-        ALOGE("Can't register fingerprint module callback, error: %d", err);
-        return nullptr;
-    }
-
     return fp_device;
 }
 
