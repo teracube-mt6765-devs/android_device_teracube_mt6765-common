@@ -30,6 +30,9 @@ PRODUCT_AAPT_PREF_CONFIG := xxhdpi
 TARGET_SCREEN_HEIGHT := 1560
 TARGET_SCREEN_WIDTH := 720
 
+# Interfaces
+$(call inherit-product, $(LOCAL_PATH)/interfaces.mk)
+
 # A/B
 $(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota.mk)
 AB_OTA_POSTINSTALL_CONFIG += \
