@@ -36,7 +36,7 @@ PRODUCT_MODEL := Teracube 2e
 PRODUCT_GMS_CLIENTID_BASE := android-ragentek
 TARGET_VENDOR := teracube
 TARGET_VENDOR_PRODUCT_NAME := emerald
-PRODUCT_BUILD_PROP_OVERRIDES += PRIVATE_BUILD_DESC="full_yk673v6_lwg62_64-user 11 RP1A.200720.011 p1k61v164bspP16 release-keys"
+PRODUCT_BUILD_PROP_OVERRIDES += PRIVATE_BUILD_DESC="full_yk673v6_lwg62_64-user 11 RP1A.200720.011 p1k61v164bspP19 release-keys"
 
 # Set BUILD_FINGERPRINT variable to be picked up by both system and vendor build.prop
-BUILD_FINGERPRINT := Teracube/emerald/emerald:11/RP1A.200720.011/202111011925:user/release-keys
+BUILD_FINGERPRINT := Teracube/emerald/emerald:11/RP1A.200720.011/202205051245:user/release-keys

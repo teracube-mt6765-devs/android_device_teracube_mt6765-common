@@ -1,4 +1,4 @@
-# Extracted from full_yk673v6_lwg62_64-user 11 RP1A.200720.011 p1k61v164bspP16 release-keys unless pinned
+# Extracted from full_yk673v6_lwg62_64-user 11 RP1A.200720.011 p1k61v164bspP19 release-keys unless pinned
 
 # AEE and misc logging
 lib/libmdloggerrecycle.so
