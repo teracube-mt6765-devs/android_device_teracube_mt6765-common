@@ -279,7 +279,7 @@ PRODUCT_PACKAGES += \
     EmeraldTelephony
 
 # Partitions
-PRODUCT_BUILD_SUPER_PARTITION := true
+PRODUCT_BUILD_SUPER_PARTITION := false
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
 
 # Permissions
