@@ -175,7 +175,7 @@ BOOT_SECURITY_PATCH := 2019-06-06
 
 # SEPolicy
 include device/mediatek/sepolicy/BoardSEPolicyConfig.mk
-BOARD_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy
+BOARD_VENDOR_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/vendor
 
 # VINTF
 DEVICE_MANIFEST_FILE := $(DEVICE_PATH)/configs/vintf/manifest.xml
