@@ -89,17 +89,13 @@ vendor/lib64/soundfx/libaudiopreprocessing_mtk.so
 # Audio-Hardware
 system_ext/lib/vendor.mediatek.hardware.audio@6.1.so
 system_ext/lib64/vendor.mediatek.hardware.audio@6.1.so
-vendor/bin/hw/android.hardware.audio.service.mediatek
 vendor/etc/apdb/APDB_MT6765_S01__W2109
 vendor/etc/apdb/APDB_MT6765_S01__W2109_ENUM
-vendor/etc/init/android.hardware.audio.service.mediatek.rc
-vendor/lib/hw/android.hardware.audio@6.0-impl-mediatek.so
 vendor/lib/hw/audio.primary.default.so
 vendor/lib/hw/audio.primary.mt6765.so
 vendor/lib/hw/audio.r_submix.mt6765.so
 vendor/lib/hw/audio.usb.mt6765.so
 vendor/lib/vendor.mediatek.hardware.audio@6.1.so
-vendor/lib64/hw/android.hardware.audio@6.0-impl-mediatek.so
 vendor/lib64/hw/audio.primary.default.so
 vendor/lib64/hw/audio.primary.mt6765.so
 vendor/lib64/hw/audio.r_submix.mt6765.so
