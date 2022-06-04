@@ -244,6 +244,9 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     android.hardware.keymaster@4.0
 
+PRODUCT_PACKAGES += \
+    libshim_beanpod.vendor
+
 # NFC
 PRODUCT_PACKAGES += \
     com.android.nfc_extras \
