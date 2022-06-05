@@ -189,6 +189,8 @@ PRODUCT_PACKAGES += \
     android.hardware.memtrack@1.0-impl \
     android.hardware.memtrack@1.0-service \
     libdrm.vendor \
+    libhwc2on1adapter \
+    libhwc2onfbadapter \
     libvulkan
 
 # DRM
@@ -250,6 +252,7 @@ PRODUCT_PACKAGES += \
 # NFC
 PRODUCT_PACKAGES += \
     com.android.nfc_extras \
+    libchrome.vendor \
     NfcNci \
     Tag \
     SecureElement \
