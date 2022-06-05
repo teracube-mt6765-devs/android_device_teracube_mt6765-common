@@ -27,16 +27,19 @@ $(call inherit-product, $(LOCAL_PATH)/emerald.mk)
 # Inherit some common Lineage stuff
 $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 
-PRODUCT_BRAND := teracube
+PRODUCT_BRAND := Teracube
 PRODUCT_DEVICE := emerald
-PRODUCT_MANUFACTURER := teracube
+PRODUCT_MANUFACTURER := Teracube
 PRODUCT_NAME := lineage_emerald
 PRODUCT_MODEL := Teracube 2e
 
 PRODUCT_GMS_CLIENTID_BASE := android-ragentek
-TARGET_VENDOR := teracube
+TARGET_VENDOR := Teracube
 TARGET_VENDOR_PRODUCT_NAME := emerald
-PRODUCT_BUILD_PROP_OVERRIDES += PRIVATE_BUILD_DESC="full_yk673v6_lwg62_64-user 11 RP1A.200720.011 p1k61v164bspP19 release-keys"
+PRODUCT_BUILD_PROP_OVERRIDES += \
+    TARGET_DEVICE=Teracube_2e \
+    TARGET_PRODUCT=Teracube_2e \
+    PRIVATE_BUILD_DESC="full_yk673v6_lwg62_64-user 11 RP1A.200720.011 p1k61v164bspP16 release-keys"
 
 # Set BUILD_FINGERPRINT variable to be picked up by both system and vendor build.prop
-BUILD_FINGERPRINT := Teracube/emerald/emerald:11/RP1A.200720.011/202205051245:user/release-keys
+BUILD_FINGERPRINT := Teracube/Teracube_2e/Teracube_2e:11/RP1A.200720.011/202111011925:user/release-keys
