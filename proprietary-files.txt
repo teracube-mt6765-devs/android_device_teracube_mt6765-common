@@ -91,12 +91,10 @@ system_ext/lib/vendor.mediatek.hardware.audio@6.1.so
 system_ext/lib64/vendor.mediatek.hardware.audio@6.1.so
 vendor/etc/apdb/APDB_MT6765_S01__W2109
 vendor/etc/apdb/APDB_MT6765_S01__W2109_ENUM
-vendor/lib/hw/audio.primary.default.so
 vendor/lib/hw/audio.primary.mt6765.so
 vendor/lib/hw/audio.r_submix.mt6765.so
 vendor/lib/hw/audio.usb.mt6765.so
 vendor/lib/vendor.mediatek.hardware.audio@6.1.so
-vendor/lib64/hw/audio.primary.default.so
 vendor/lib64/hw/audio.primary.mt6765.so
 vendor/lib64/hw/audio.r_submix.mt6765.so
 vendor/lib64/hw/audio.usb.mt6765.so
@@ -425,7 +423,6 @@ vendor/lib/libmtkcam_stdutils.so
 vendor/lib/libmtkcam_ulog.so
 vendor/lib/libimgsensorca.so
 vendor/lib/libbwc.so
-vendor/lib/libeffectsconfig.so
 vendor/lib/libdpframework.so
 vendor/lib/libFrameRecord.so
 vendor/lib/hi846_2lane_mipi_raw_tuning.so
@@ -452,7 +449,6 @@ vendor/lib64/libabfadp.so
 vendor/lib64/libacdk.so
 vendor/lib64/libdpframework.so
 vendor/lib64/libFrameRecord.so
-vendor/lib64/libeffectsconfig.so
 vendor/lib64/libeffecthal.base.so
 vendor/lib64/libfeature.face.so
 vendor/lib64/libfeature.stereo.provider.so
@@ -621,10 +617,8 @@ vendor/lib64/libcurl_xcap_md.so
 vendor/bin/hw/android.hardware.drm@1.3-service.widevine
 vendor/etc/init/android.hardware.drm@1.3-service.widevine.rc
 -vendor/etc/vintf/manifest/manifest_android.hardware.drm@1.3-service.widevine.xml
-vendor/lib/libdrm.so
 vendor/lib/libwvhidl.so
 vendor/lib/mediadrm/libwvdrmengine.so
-vendor/lib64/libdrm.so
 vendor/lib64/libwvhidl.so
 vendor/lib64/mediadrm/libwvdrmengine.so
 
@@ -642,8 +636,6 @@ vendor/lib/libDefaultFpsActor.so
 vendor/lib/libgralloctypes_mtk.so
 vendor/lib/libgralloc_extra.so
 vendor/lib/libgralloc_metadata.so
-vendor/lib/libhwc2on1adapter.so
-vendor/lib/libhwc2onfbadapter.so
 vendor/lib/libion_mtk.so
 vendor/lib/libion_ulit.so
 vendor/lib/libladder.so
@@ -658,7 +650,6 @@ vendor/lib/vendor.mediatek.hardware.pq@2.3.so
 vendor/lib/vendor.mediatek.hardware.pq@2.4.so
 vendor/lib/vendor.mediatek.hardware.pq@2.5.so
 vendor/lib/vendor.mediatek.hardware.pq@2.6.so
-vendor/lib/hw/gralloc.default.so
 vendor/lib/hw/gralloc.rogue.so
 vendor/lib/hw/memtrack.mt6765.so
 vendor/lib64/libNoFpsActor.so
@@ -682,7 +673,6 @@ vendor/lib64/vendor.mediatek.hardware.pq@2.5.so
 vendor/lib64/vendor.mediatek.hardware.pq@2.6.so
 vendor/lib64/hw/android.hardware.graphics.mapper@4.0-impl-mediatek.so
 vendor/lib64/hw/vendor.mediatek.hardware.pq@2.6-impl.so
-vendor/lib64/hw/gralloc.default.so
 vendor/lib64/hw/gralloc.rogue.so
 vendor/lib64/hw/hwcomposer.mt6765.so
 vendor/lib64/hw/memtrack.mt6765.so
@@ -897,7 +887,6 @@ vendor/bin/volte_ua
 vendor/bin/wfca
 vendor/bin/hw/vendor.mediatek.hardware.mms@1.5-service
 vendor/etc/init/atcid.rc
-vendor/etc/init/boringssl_self_test.rc
 vendor/etc/init/getgameserver.rc
 vendor/etc/init/gsm0710muxd.rc
 vendor/etc/init/init.bip.rc
@@ -967,7 +956,6 @@ vendor/lib64/libblisrc32_vendor.so
 vendor/lib64/libcares_naptr.so
 vendor/lib64/libcarrierconfig.so
 vendor/lib64/libcharon-ss.so
-vendor/lib64/libchrome.so
 vendor/lib64/libcvsd_mtk.so
 vendor/lib64/libfft_vendor.so
 vendor/lib64/libforkexecwrap.so
@@ -1259,7 +1247,6 @@ vendor/lib/libpowerhal.so
 vendor/lib/libpowerhalwrap_vendor.so
 vendor/lib/vendor.mediatek.hardware.mtkpower@1.0.so
 vendor/lib/vendor.mediatek.hardware.mtkpower@1.1.so
-vendor/lib/hw/power.default.so
 vendor/lib/hw/power.mt6765.so
 vendor/lib/hw/vendor.mediatek.hardware.mtkpower@1.1-impl.so
 vendor/lib64/libmtkperf_client_vendor.so
@@ -1271,7 +1258,6 @@ vendor/lib64/vendor.mediatek.hardware.mtkpower@1.0.so
 vendor/lib64/vendor.mediatek.hardware.mtkpower@1.1.so
 vendor/lib64/vendor.mediatek.hardware.power@1.1.so
 vendor/lib64/vendor.mediatek.hardware.power@2.0.so
-vendor/lib64/hw/power.default.so
 vendor/lib64/hw/power.mt6765.so
 vendor/lib64/hw/vendor.mediatek.hardware.mtkpower@1.1-impl.so
 
@@ -1322,8 +1308,6 @@ vendor/lib64/hw/android.hardware.thermal@2.0-impl.so
 vendor/bin/hw/android.hardware.vibrator-service.mediatek
 vendor/etc/init/vibrator-mtk-default.rc
 -vendor/etc/vintf/manifest/vibrator-mtk-default.xml
-vendor/lib/hw/vibrator.default.so
-vendor/lib64/hw/vibrator.default.so
 
 # Extras
 system_ext/etc/init/hw/vendor_init_as_system.rc
