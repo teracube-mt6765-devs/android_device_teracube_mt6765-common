@@ -17,7 +17,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
 # Enable debug options for emerald product.
-ifeq (eng,$(TARGET_BUILD_VARIANT))
+ifeq (userdebug,$(TARGET_BUILD_VARIANT))
   EMERALD_DEBUG := true
 endif
 
