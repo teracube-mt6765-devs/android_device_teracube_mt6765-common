@@ -12,18 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-DEVICE_PATH := device/teracube/emerald
-
-# A/B
-AB_OTA_UPDATER := true
-AB_OTA_PARTITIONS += \
-    boot \
-    product \
-    system \
-    vendor \
-    vbmeta \
-    vbmeta_system \
-    vbmeta_vendor
+COMMON_PATH := device/teracube/mt6765-common
 
 # Architecture
 TARGET_ARCH := arm64
@@ -39,9 +28,6 @@ TARGET_2ND_CPU_ABI := armeabi-v7a
 TARGET_2ND_CPU_ABI2 := armeabi
 
 TARGET_BOARD_PLATFORM := mt6765
-
-# Asserts
-TARGET_OTA_ASSERT_DEVICE := emerald,2e,yk673v6_lwg62_64,Teracube_2e
 
 # APEX
 DEXPREOPT_GENERATE_APEX_IMAGE := true
@@ -81,7 +67,7 @@ TARGET_NO_BOOTLOADER := true
 TARGET_BOOTLOADER_BOARD_NAME := yk673v6_lwg62_64
 
 # Bluetooth
-BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(DEVICE_PATH)/bluetooth 
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(COMMON_PATH)/bluetooth 
 
 # Display
 TARGET_USES_HWC2 := true
@@ -98,7 +84,7 @@ BUILD_BROKEN_DUP_RULES := true
 BOARD_KERNEL_CMDLINE := bootopt=64S3,32N2,64N2
 BOARD_KERNEL_CMDLINE += androidboot.init_fatal_reboot_target=recovery
 
-ifeq ($(EMERALD_DEBUG),true)
+ifeq ($(TERACUBE_DEBUG),true)
 BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
 endif
 
@@ -115,13 +101,12 @@ BOARD_BOOTIMG_HEADER_VERSION := 2
 
 TARGET_KERNEL_ARCH := arm64
 TARGET_KERNEL_HEADER_ARCH := arm64
-TARGET_KERNEL_SOURCE := kernel/teracube/emerald
-TARGET_KERNEL_CONFIG := emerald_defconfig
+TARGET_KERNEL_SOURCE := kernel/teracube/mt6765
 TARGET_KERNEL_CLANG_COMPILE := true
 
 BOARD_INCLUDE_DTB_IN_BOOTIMG := true
 BOARD_KERNEL_SEPARATED_DTBO := true
-BOARD_CUSTOM_DTBOIMG_MK := $(DEVICE_PATH)/dtbo/dtbo.mk
+BOARD_CUSTOM_DTBOIMG_MK := $(COMMON_PATH)/dtbo/dtbo.mk
 
 BOARD_MKBOOTIMG_ARGS += --dtb_offset $(BOARD_DTB_OFFSET)
 BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOTIMG_HEADER_VERSION)
@@ -129,55 +114,28 @@ BOARD_MKBOOTIMG_ARGS += --kernel_offset $(BOARD_KERNEL_OFFSET)
 BOARD_MKBOOTIMG_ARGS += --ramdisk_offset $(BOARD_RAMDISK_OFFSET)
 BOARD_MKBOOTIMG_ARGS += --tags_offset $(BOARD_KERNEL_TAGS_OFFSET)
 
-# Partitions
-BOARD_TERACUBE_DYNAMIC_PARTITIONS_PARTITION_LIST := product system vendor
-BOARD_TERACUBE_DYNAMIC_PARTITIONS_SIZE := 4292870144
-BOARD_SUPER_PARTITION_GROUPS := teracube_dynamic_partitions
-BOARD_SUPER_PARTITION_SIZE := 10070425600
-
-BOARD_BOOTIMAGE_PARTITION_SIZE := 33554432
-BOARD_DTBOIMG_PARTITION_SIZE := 8388608
-BOARD_CACHEIMAGE_PARTITION_SIZE := 452984832
-
-ifneq ($(WITH_GMS),true)
-BOARD_PRODUCTIMAGE_EXTFS_INODE_COUNT := -1
-BOARD_PRODUCTIMAGE_PARTITION_RESERVED_SIZE := 805306368
-BOARD_SYSTEMIMAGE_EXTFS_INODE_COUNT := -1
-BOARD_SYSTEMIMAGE_PARTITION_RESERVED_SIZE := 805306368
-endif
-
-BOARD_PRODUCTIMAGE_FILE_SYSTEM_TYPE := ext4
-BOARD_SYSTEMIMAGE_FILE_SYSTEM_TYPE := ext4
-BOARD_VENDORIMAGE_FILE_SYSTEM_TYPE := ext4
-
-TARGET_COPY_OUT_PRODUCT := product
-TARGET_COPY_OUT_SYSTEM := system
-TARGET_COPY_OUT_VENDOR := vendor
-
 # Properties
-TARGET_SYSTEM_PROP += $(DEVICE_PATH)/configs/properties/system.prop
-TARGET_VENDOR_PROP += $(DEVICE_PATH)/configs/properties/vendor.prop
+TARGET_SYSTEM_PROP += $(COMMON_PATH)/configs/properties/system.prop
+TARGET_VENDOR_PROP += $(COMMON_PATH)/configs/properties/vendor.prop
 
 # RIL
 ENABLE_VENDOR_RIL_SERVICE := true
 
 # Recovery
 BOARD_INCLUDE_RECOVERY_DTBO := true
-BOARD_USES_RECOVERY_AS_BOOT := true
-TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/etc/fstab.mt6765
 TARGET_RECOVERY_PIXEL_FORMAT := RGBX_8888
 TARGET_RECOVERY_UI_MARGIN_HEIGHT := 100
 TARGET_USERIMAGES_USE_F2FS := true
 
 # Security Patch Level
-VENDOR_SECURITY_PATCH := 2022-05-05
+VENDOR_SECURITY_PATCH := 2022-06-05
 BOOT_SECURITY_PATCH := 2019-06-06
 
 # SEPolicy
 include device/mediatek/sepolicy/BoardSEPolicyConfig.mk
-BOARD_VENDOR_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/vendor
+BOARD_VENDOR_SEPOLICY_DIRS += $(COMMON_PATH)/sepolicy/vendor
 
 # VINTF
-DEVICE_MANIFEST_FILE := $(DEVICE_PATH)/configs/vintf/manifest.xml
+DEVICE_MANIFEST_FILE := $(COMMON_PATH)/configs/vintf/manifest.xml
 
--include vendor/teracube/emerald/BoardConfigVendor.mk
+-include vendor/teracube/mt6765-common/BoardConfigVendor.mk

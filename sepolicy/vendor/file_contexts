@@ -1,2 +1,2 @@
 /dev/fpsensor      u:object_r:fpsensor_fp_device:s0
-/(vendor|system/vendor)/bin/hw/android\.hardware\.biometrics\.fingerprint@2\.1-service\.emerald  u:object_r:hal_fingerprint_default_exec:s0
+/(vendor|system/vendor)/bin/hw/android\.hardware\.biometrics\.fingerprint@2\.1-service\.teracube  u:object_r:hal_fingerprint_default_exec:s0

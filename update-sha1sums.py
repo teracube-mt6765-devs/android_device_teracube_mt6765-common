@@ -20,7 +20,7 @@ import os
 import sys
 from hashlib import sha1
 
-device='emerald'
+device='mt6765-common'
 vendor='teracube'
 
 with open('proprietary-files.txt', 'r') as f:
