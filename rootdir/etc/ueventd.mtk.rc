@@ -52,8 +52,11 @@
 /dev/btif                 0600   system     system
 
 # Trusty driver
-/dev/trusty-ipc-dev0      0660   system     system
+/dev/trusty-ipc-dev0      0660   system     drmrpc
 /dev/nebula-ipc-dev0      0660   system     system
+
+# RPMB (for Trusty)
+/dev/mmcblk0rpmb    0660   root       system
 
 # TrustonicTEE driver
 /dev/mobicore             0600   system     system

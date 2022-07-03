@@ -1,4 +1,4 @@
-ifeq (true,$(EMERALD_DEBUG))
+ifeq (true,$(TERACUBE_DEBUG))
     VENDOR_LOG_LEVEL_I=I
     VENDOR_LOG_LEVEL_D=D
 else

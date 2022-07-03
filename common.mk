@@ -16,9 +16,6 @@
 
 PRODUCT_SOONG_NAMESPACES += $(LOCAL_PATH)
 
-# Scatter file
-TARGET_SCATTERFILE := $(LOCAL_PATH)/configs/MT6765_Android_scatter.txt
-
 # Shipping API Level
 PRODUCT_SHIPPING_API_LEVEL := 30
 
@@ -32,40 +29,6 @@ TARGET_SCREEN_WIDTH := 720
 
 # Interfaces
 $(call inherit-product, $(LOCAL_PATH)/interfaces.mk)
-
-# A/B
-$(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota.mk)
-AB_OTA_POSTINSTALL_CONFIG += \
-    RUN_POSTINSTALL_system=true \
-    POSTINSTALL_PATH_system=system/bin/otapreopt_script \
-    FILESYSTEM_TYPE_system=ext4 \
-    POSTINSTALL_OPTIONAL_system=true
-
-PRODUCT_PACKAGES += \
-    otapreopt_script
-
-# bootctrl HAL and HIDL
-PRODUCT_PACKAGES += \
-    android.hardware.boot@1.1 \
-    android.hardware.boot@1.1-service \
-    android.hardware.boot@1.1-mtkimpl \
-    android.hardware.boot@1.1-mtkimpl.recovery
-
-# Fastboot HAL
-PRODUCT_PACKAGES += \
-    android.hardware.fastboot@1.0-impl-mtk
-
-# Tell the system to enable copying odexes from other partition.
-PRODUCT_PACKAGES += \
-    cppreopts.sh
-
-# Build MT-PL-Utils
-PRODUCT_PACKAGES += \
-    mtk_plpath_utils \
-    mtk_plpath_utils.recovery
-
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.cp_system_other_odex=1
 
 # Enable updating of APEXes
 $(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
@@ -166,7 +129,7 @@ PRODUCT_COPY_FILES += \
 
 # Biometrics
 PRODUCT_PACKAGES += \
-    android.hardware.biometrics.fingerprint@2.1-service.emerald
+    android.hardware.biometrics.fingerprint@2.1-service.teracube
 
 # Bluetooth
 PRODUCT_PACKAGES += \
@@ -241,13 +204,6 @@ PRODUCT_PACKAGES += \
 # Keylayouts
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/keylayouts/mtk-kpd.kl:$(TARGET_COPY_OUT_SYSTEM)/usr/keylayout/mtk-kpd.kl
-
-# Keymaster
-PRODUCT_PACKAGES += \
-    android.hardware.keymaster@4.0
-
-PRODUCT_PACKAGES += \
-    libshim_beanpod.vendor
 
 # NFC
 PRODUCT_PACKAGES += \
@@ -354,7 +310,7 @@ PRODUCT_BOOT_JARS += \
 PRODUCT_PACKAGES += \
     libshim_vtservice
 
-# Runtime Configuration and fstab
+# Runtime Configuration
 PRODUCT_PACKAGES += \
     init.aee.rc \
     init.ago.rc \
@@ -366,10 +322,6 @@ PRODUCT_PACKAGES += \
     init.project.rc \
     init.sensor_1_0.rc \
     init.stnfc.rc \
-    fstab.mt6762 \
-    fstab.mt6765 \
-    fstab.mt6762.ramdisk \
-    fstab.mt6765.ramdisk \
     ueventd.mtk.rc
 
 # Sensors
@@ -383,15 +335,6 @@ PRODUCT_PACKAGES += \
 # TinyXML
 PRODUCT_PACKAGES += \
     libtinyxml
-
-# Update engine
-PRODUCT_PACKAGES += \
-    update_engine \
-    update_engine_sideload \
-    update_verifier
-
-PRODUCT_PACKAGES_DEBUG += \
-    update_engine_client
 
 # VNDK
 PRODUCT_COPY_FILES += \
@@ -420,4 +363,4 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/wifi/wpa_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/wpa_supplicant_overlay.conf \
 
 # Inherit proprietary aspects if they exist.
-$(call inherit-product-if-exists, vendor/teracube/emerald/emerald-vendor.mk)
+$(call inherit-product-if-exists, vendor/teracube/mt6765-common/mt6765-common-vendor.mk)
