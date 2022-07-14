@@ -760,12 +760,6 @@ vendor/lib64/hw/gps.default.so
 vendor/lib64/lbs_hidl_service-impl.so
 vendor/lib64/vendor.mediatek.hardware.lbs@1.0.so
 
-# Gatekeeper
-vendor/lib/hw/gatekeeper.beanpod.so
-vendor/lib/hw/gatekeeper.default.so
-vendor/lib64/hw/gatekeeper.beanpod.so
-vendor/lib64/hw/gatekeeper.default.so
-
 # Graphics
 system_ext/lib/vendor.mediatek.hardware.gpu@1.0.so
 system_ext/lib64/vendor.mediatek.hardware.gpu@1.0.so
@@ -1033,52 +1027,6 @@ vendor/lib/libipsec_ims_shr.so
 vendor/lib64/libhydra.so
 vendor/lib64/libipsec_ims_shr.so
 
-# Keymaster
-system_ext/lib/libteeservice_client.trustonic.so
-system_ext/lib64/libteeservice_client.trustonic.so
-vendor/bin/bp_kmsetkey_ca
-vendor/bin/teei_daemon
-vendor/bin/hw/android.hardware.keymaster@4.0-service.beanpod
-vendor/bin/hw/vendor.microtrust.hardware.tface@1.0-service
-vendor/bin/hw/vendor.mediatek.hardware.keymaster_attestation@1.1-service
-vendor/etc/init/android.hardware.keymaster@4.0-service.beanpod.rc
-vendor/etc/init/vendor.mediatek.hardware.keymaster_attestation@1.1-service.rc
-vendor/etc/init/vendor.microtrust.hardware.tface@1.0-service.rc
-vendor/etc/init/microtrust.bp_kmsetkey_ca.rc
-vendor/etc/init/microtrust.rc
-vendor/lib/hw/vendor.mediatek.hardware.keymaster_attestation@1.1-impl.so
-vendor/lib/hw/kmsetkey.beanpod.so
-vendor/lib/hw/libSoftGatekeeper.so
-vendor/lib/libTEECommon.so
-vendor/lib/libtface.so
-vendor/lib/libkeystore-wifi-hidl.so
-vendor/lib/libwapi.so
-vendor/lib/vendor.mediatek.hardware.keymaster_attestation@1.0.so
-vendor/lib/vendor.mediatek.hardware.keymaster_attestation@1.1.so
-vendor/lib/vendor.microtrust.hardware.tface@1.0.so
-vendor/lib64/hw/vendor.mediatek.hardware.keymaster_attestation@1.1-impl.so
-vendor/lib64/hw/kmsetkey.beanpod.so
-vendor/lib64/hw/libSoftGatekeeper.so
-vendor/lib64/libkphhelper.so
-vendor/lib64/libkphproxy.so
-vendor/lib64/libteec.so
-vendor/lib64/libTEECommon.so
-vendor/lib64/libtface.so
-vendor/lib64/libkmsetkey.so
-vendor/lib64/libpl.so
-vendor/lib64/libsoft_attestation_cert.so
-vendor/lib64/libpuresoftkeymasterdevice.so
-vendor/lib64/libkeystore-engine-wifi-hidl.so
-vendor/lib64/libkeystore-wifi-hidl.so
-vendor/lib64/libkeymaster4.so
-vendor/lib64/libkeymaster4support.so
-vendor/lib64/libkeymaster_messages.so
-vendor/lib64/libkeymaster_portable.so
-vendor/lib64/libwapi.so
-vendor/lib64/vendor.mediatek.hardware.keymaster_attestation@1.0.so
-vendor/lib64/vendor.mediatek.hardware.keymaster_attestation@1.1.so
-vendor/lib64/vendor.microtrust.hardware.tface@1.0.so
-
 # Lights
 vendor/bin/hw/android.hardware.lights-service.mediatek
 vendor/etc/init/lights-mtk-default.rc
@@ -1301,24 +1249,6 @@ vendor/etc/init/vibrator-mtk-default.rc
 # Extras
 system_ext/etc/init/hw/vendor_init_as_system.rc
 vendor/etc/partition_permission.sh
-
-# TA
-vendor/bin/init_thh
-vendor/bin/hw/vendor.microtrust.hardware.thh@2.0-service
-vendor/etc/init/microtrust.init_thh.rc
-vendor/etc/init/vendor.microtrust.hardware.thh@2.0-service.rc
-vendor/lib/libthha.so
-vendor/lib/libthhclient.so
-vendor/lib64/libthha.so
-vendor/lib64/libthhclient.so
-vendor/lib64/vendor.microtrust.hardware.thh@2.0.so
-vendor/thh/ta/0102030405060708090a0b0c0d0e0f10.ta
-vendor/thh/ta/7778c03fc30c4dd0a319ea29643d4d4b.ta
-vendor/thh/ta/93feffccd8ca11e796c7c7a21acb4932.ta
-vendor/thh/ta/bd038be8f6724256887c1fa734524012.ta
-vendor/thh/ta/c09c9c5daa504b78b0e46eda61556c3a.ta
-vendor/thh/ta/c1882f2d885e4e13a8c8e2622461b2fa.ta
-vendor/thh/ta/d91f322ad5a441d5955110eda3272fc0.ta
 
 # USB
 vendor/bin/hw/android.hardware.usb@1.1-service-mediatekv2
