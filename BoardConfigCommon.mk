@@ -84,7 +84,8 @@ BUILD_BROKEN_DUP_RULES := true
 BOARD_KERNEL_CMDLINE := bootopt=64S3,32N2,64N2
 BOARD_KERNEL_CMDLINE += androidboot.init_fatal_reboot_target=recovery
 
-ifeq ($(TERACUBE_DEBUG),true)
+ifneq ($(filter partial true,$(TERACUBE_DEBUG)),)
+$(warning "TERACUBE_DEBUG set to " $(TERACUBE_DEBUG))
 BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
 endif
 
