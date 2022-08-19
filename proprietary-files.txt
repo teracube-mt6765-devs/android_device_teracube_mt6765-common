@@ -69,6 +69,7 @@ vendor/lib/libaudiofmtconv.so
 vendor/lib/libaudioloudc.so
 vendor/lib/libaudioprimarydevicehalifclient.so
 vendor/lib/libaudiotoolkit_vendor.so
+vendor/lib/libwebrtc_audio_preprocessing.so
 vendor/lib/libaudio_param_parser-vnd.so
 vendor/lib/libbessound_hd_mtk_vendor.so
 vendor/lib/soundfx/libaudiopreprocessing_mtk.so
@@ -82,6 +83,7 @@ vendor/lib64/libaudiofmtconv.so
 vendor/lib64/libaudioloudc.so
 vendor/lib64/libaudioprimarydevicehalifclient.so
 vendor/lib64/libaudiotoolkit_vendor.so
+vendor/lib64/libwebrtc_audio_preprocessing.so
 vendor/lib64/libaudio_param_parser-vnd.so
 vendor/lib64/libbessound_hd_mtk_vendor.so
 vendor/lib64/soundfx/libaudiopreprocessing_mtk.so
