@@ -90,6 +90,9 @@ function blob_fixup {
         vendor/lib64/hw/audio.primary.mt6765.so)
             "${PATCHELF}" --replace-needed "libmedia_helper.so" "libmedia_helper-v30.so" "${2}"
             ;;
+        vendor/lib64/hw/vendor.mediatek.hardware.pq@2.6-impl.so)
+            "${PATCHELF}" --replace-needed "libutils.so" "libutils-v30.so" "${2}"
+            ;;
         vendor/lib64/android.hardware.power-service-mediatek.so)
             "${PATCHELF}" --replace-needed "android.hardware.power-V1-ndk_platform.so" "android.hardware.power-V1-ndk.so" "${2}"
             ;;
