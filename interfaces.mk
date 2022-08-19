@@ -25,7 +25,7 @@ PRODUCT_PACKAGES += \
     android.hardware.power-V1.vendor \
     android.hardware.power-V1-ndk.vendor \
     android.hardware.vibrator-V1.vendor \
-    android.hardware.vibrator-V1-ndk_platform.vendor \
+    android.hardware.vibrator-V1-ndk.vendor \
     android.hardware.power@1.0.vendor \
     android.hardware.power@1.1.vendor \
     android.hardware.power@1.3.vendor \
