@@ -63,11 +63,17 @@ function blob_fixup {
         lib/libsink.so)
             "${PATCHELF}" --add-needed "libshim_vtservice.so" "${2}"
             ;;
+        vendor/bin/factory)
+            "${PATCHELF}" --replace-needed "android.hardware.light-V1-ndk_platform.so" "android.hardware.light-V1-ndk.so" "${2}"
+            ;;
         vendor/bin/hw/power_native_test_v_1_1)
             "${PATCHELF}" --replace-needed "android.hardware.power-V1-ndk_platform.so" "android.hardware.power-V1-ndk.so" "${2}"
             ;;
         vendor/bin/hw/vendor.mediatek.hardware.mtkpower@1.0-service)
             "${PATCHELF}" --replace-needed "android.hardware.power-V1-ndk_platform.so" "android.hardware.power-V1-ndk.so" "${2}"
+            ;;
+        vendor/bin/hw/android.hardware.lights-service.mediatek)
+            "${PATCHELF}" --replace-needed "android.hardware.light-V1-ndk_platform.so" "android.hardware.light-V1-ndk.so" "${2}"
             ;;
         vendor/lib/hw/audio.primary.mt6765.so)
             "${PATCHELF}" --replace-needed "libmedia_helper.so" "libmedia_helper-v30.so" "${2}"
