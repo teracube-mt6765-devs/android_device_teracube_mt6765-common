@@ -1,2 +1,10 @@
 soong_namespace {
 }
+
+prebuilt_hidl_interfaces {
+    name: "hidl_keymaster_interface",
+    interfaces: [
+        "vendor.mediatek.hardware.keymaster_attestation@1.0::IKeymasterDevice",
+        "vendor.mediatek.hardware.keymaster_attestation@1.1::IKeymasterDevice",
+    ],
+}
