@@ -1,1 +1,2 @@
+# FP Sensor
 allow init fpsensor_fp_device:chr_file {write};

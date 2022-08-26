@@ -1,3 +1,4 @@
+# FP Sensor
 type fpsensor_fp_device, dev_type;
 type fp_ext_svc2_service, hwservice_manager_type;
 
