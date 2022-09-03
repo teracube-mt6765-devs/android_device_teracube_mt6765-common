@@ -241,7 +241,7 @@ PRODUCT_PACKAGES += \
     Teracube2eTelephony
 
 # Partitions
-PRODUCT_BUILD_SUPER_PARTITION := false
+PRODUCT_BUILD_SUPER_PARTITION := true
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
 
 # Permissions
