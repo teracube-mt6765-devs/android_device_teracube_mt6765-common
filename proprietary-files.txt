@@ -398,7 +398,6 @@ vendor/etc/security/cacerts_supl/lab/ed7b215e.0
 vendor/etc/security/cacerts_supl/lab/ef4b31e6.0
 
 # Camera
-system_ext/lib/libimage_detect.so
 vendor/bin/hw/camerahalserver
 vendor/bin/lib3a.ccu.dm
 vendor/bin/lib3a.ccu.pm
@@ -412,12 +411,10 @@ vendor/etc/init/camerahalserver.rc
 vendor/lib/hw/vendor.mediatek.hardware.camera.bgservice@1.1-impl.so
 vendor/lib/vendor.mediatek.hardware.camera.bgservice@1.0.so
 vendor/lib/vendor.mediatek.hardware.camera.bgservice@1.1.so
-vendor/lib/libispcameraca.so
 vendor/lib/libmtkcam.eventcallback.so
 vendor/lib/libmtkcam_debugutils.so
 vendor/lib/libmtkcam_stdutils.so
 vendor/lib/libmtkcam_ulog.so
-vendor/lib/libimgsensorca.so
 vendor/lib/libbwc.so
 vendor/lib/libdpframework.so
 vendor/lib/libFrameRecord.so
@@ -493,8 +490,6 @@ vendor/lib64/libstereoinfoaccessor_vsdof.so
 vendor/lib64/libcameracustom.eis.so
 vendor/lib64/libcameracustom.plugin.so
 vendor/lib64/libcameracustom.so
-vendor/lib64/libispcameraca.so
-vendor/lib64/libimgsensorca.so
 vendor/lib64/libimageio.so
 vendor/lib64/libimageio_plat_drv.so
 vendor/lib64/libimageio_plat_pipe.so
@@ -600,7 +595,6 @@ lib/libshowlogo.so
 
 # Crypto
 system_ext/lib/libcmdl_ndk.mtk.so
-system_ext/lib/libcipher_utils.so
 system_ext/lib64/libcmdl_ndk.mtk.so
 vendor/lib/libcrypto-mdapp.so
 vendor/lib/libcurl-md.so
@@ -896,7 +890,6 @@ vendor/lib/libcares_naptr.so
 vendor/lib/libcarrierconfig.so
 vendor/lib/libcvsd_mtk.so
 vendor/lib/libglslcompiler.so
-vendor/lib/libimsg_log.so
 vendor/lib/libmnetlink_v104.so
 vendor/lib/libmsbc_mtk.so
 vendor/lib/libmtcloader.so
@@ -944,7 +937,6 @@ vendor/lib64/libfft_vendor.so
 vendor/lib64/libforkexecwrap.so
 vendor/lib64/libglslcompiler.so
 vendor/lib64/libifcutils_mtk.so
-vendor/lib64/libimsg_log.so
 vendor/lib64/liblpcnr.so
 vendor/lib64/libmnetlink_v104.so
 vendor/lib64/libmsbc_mtk.so
@@ -1047,8 +1039,6 @@ vendor/lib/libh264dec_se.ca7.so
 vendor/lib/libh264enc_sa.ca7.so
 vendor/lib/libHEVCdec_sa.ca7.android.so
 vendor/lib/libhevce_sb.ca7.android.so
-vendor/lib/libgz_gp_client.so
-vendor/lib/libgz_uree.so
 vendor/lib/libjpeg-alpha-oal_vendor.so
 vendor/lib/libjpeg-alpha_vendor.so
 vendor/lib/libJpgDecPipe.so
@@ -1079,8 +1069,6 @@ vendor/lib/libvp9dec_sa.ca7.so
 vendor/lib/vendor.mediatek.hardware.mtkcodecservice@1.1.so
 vendor/lib/hw/vendor.mediatek.hardware.mtkcodecservice@1.1-impl.so
 vendor/lib64/libMtkOmxCore.so
-vendor/lib64/libgz_gp_client.so
-vendor/lib64/libgz_uree.so
 vendor/lib64/libhevce_sb.ca7.android.so
 vendor/lib64/libJpgEncPipe.so
 vendor/lib64/libjpeg-alpha-oal_vendor.so
@@ -1101,7 +1089,6 @@ system_ext/lib/libarmnn_ndk.mtk.so
 system_ext/lib/libneuronusdk_adapter.mtk.so
 system_ext/lib/libneuron_opencv_delegate.mtk.so
 system_ext/lib/libnir_neon_driver_ndk.mtk.so
-system_ext/lib/libnn_sample.so
 system_ext/lib/libtflite_mtk.mtk.so
 system_ext/lib64/libarmnn_ndk.mtk.so
 system_ext/lib64/libneuronusdk_adapter.mtk.so
