@@ -1,0 +1,77 @@
+prebuilt_etc {
+    name: "init.aee.rc",
+    src: "etc/init.aee.rc",
+    sub_dir: "init/hw",
+    proprietary: true,
+}
+
+prebuilt_etc {
+    name: "init.ago.rc",
+    src: "etc/init.ago.rc",
+    sub_dir: "init/hw",
+    proprietary: true,
+}
+
+prebuilt_etc {
+    name: "init.connectivity.rc",
+    src: "etc/init.connectivity.rc",
+    sub_dir: "init/hw",
+    proprietary: true,
+}
+
+prebuilt_etc {
+    name: "init.modem.rc",
+    src: "etc/init.modem.rc",
+    sub_dir: "init/hw",
+    proprietary: true,
+}
+
+prebuilt_etc {
+    name: "init.mt6762.rc",
+    src: "etc/init.mt6762.rc",
+    sub_dir: "init/hw",
+    proprietary: true,
+
+}
+
+prebuilt_etc {
+    name: "init.mt6765.rc",
+    src: "etc/init.mt6765.rc",
+    sub_dir: "init/hw",
+    proprietary: true,
+}
+
+prebuilt_etc {
+    name: "init.mt6765.usb.rc",
+    src: "etc/init.mt6765.usb.rc",
+    sub_dir: "init/hw",
+    proprietary: true,
+}
+
+prebuilt_etc {
+    name: "init.project.rc",
+    src: "etc/init.project.rc",
+    sub_dir: "init/hw",
+    proprietary: true,
+}
+
+prebuilt_etc {
+    name: "init.sensor_1_0.rc",
+    src: "etc/init.sensor_1_0.rc",
+    sub_dir: "init/hw",
+    proprietary: true,
+}
+
+prebuilt_etc {
+    name: "init.stnfc.rc",
+    src: "etc/init.stnfc.rc",
+    sub_dir: "init/hw",
+    proprietary: true,
+}
+
+prebuilt_etc {
+    name: "ueventd.mtk.rc",
+    filename: "ueventd.rc",
+    src: "etc/ueventd.mtk.rc",
+    proprietary: true,
+}
