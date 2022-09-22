@@ -337,6 +337,24 @@ PRODUCT_COPY_FILES += \
     prebuilts/vndk/v30/arm64/arch-arm64-armv8-a/shared/vndk-sp/libutils.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libutils-v30.so \
     prebuilts/vndk/v30/arm64/arch-arm64-armv8-a/shared/vndk-sp/libunwindstack.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libunwindstack-v30.so
 
+PRODUCT_PACKAGES += \
+    android.hardware.bluetooth@1.0.vendor \
+    android.hardware.camera.device@3.6.vendor \
+    android.hardware.camera.provider@2.6.vendor \
+    android.hardware.drm@1.3.vendor \
+    android.hardware.gnss@2.1.vendor \
+    android.hardware.power-V1-ndk_platform.vendor \
+    android.hardware.power@1.2.vendor \
+    android.hardware.radio.config@1.2.vendor \
+    android.hardware.radio@1.5.vendor \
+    android.hardware.sensors@2.0.vendor \
+    android.hardware.thermal@2.0.vendor \
+    android.hardware.usb.gadget@1.1.vendor \
+    android.hardware.usb@1.1.vendor \
+    android.hardware.vibrator-V1-ndk_platform.vendor \
+    android.hardware.wifi.supplicant@1.3.vendor \
+    android.hidl.allocator@1.0.vendor
+
 # WiFi
 PRODUCT_PACKAGES += \
     hostapd \
