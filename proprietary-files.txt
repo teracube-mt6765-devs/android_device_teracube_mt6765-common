@@ -594,6 +594,8 @@ vendor/lib64/libccci_util.so
 bin/kpoc_charger
 etc/init/kpoc_charger.rc
 lib/libshowlogo.so
+lib/libsysenv_system.so
+lib64/libsysenv_system.so
 
 # Crypto
 system_ext/lib/libcmdl_ndk.mtk.so
