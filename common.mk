@@ -16,6 +16,22 @@
 
 PRODUCT_SOONG_NAMESPACES += $(LOCAL_PATH)
 
+# Product data
+PRODUCT_BRAND := Teracube
+PRODUCT_MANUFACTURER := Teracube
+PRODUCT_MODEL := Teracube 2e
+
+PRODUCT_GMS_CLIENTID_BASE := android-ragentek
+TARGET_VENDOR := Teracube
+
+PRODUCT_BUILD_PROP_OVERRIDES += \
+    TARGET_DEVICE=Teracube_2e \
+    TARGET_PRODUCT=Teracube_2e \
+    PRIVATE_BUILD_DESC="full_yk673v6_lwg62_64-user 11 RP1A.200720.011 p1k61v164bspP16 release-keys"
+
+# Set BUILD_FINGERPRINT variable to be picked up by both system and vendor build.prop
+BUILD_FINGERPRINT := Teracube/Teracube_2e/Teracube_2e:11/RP1A.200720.011/202111011925:user/release-keys
+
 # Shipping API Level
 PRODUCT_SHIPPING_API_LEVEL := 29
 
