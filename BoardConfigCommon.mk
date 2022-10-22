@@ -142,4 +142,7 @@ include $(COMMON_PATH)/sepolicy/twoe-sepolicy.mk
 # VINTF
 DEVICE_MANIFEST_FILE := $(COMMON_PATH)/configs/vintf/manifest.xml
 
+# WiFi
+WIFI_HIDL_FEATURE_DUAL_INTERFACE := true
+
 -include vendor/teracube/mt6765-common/BoardConfigVendor.mk
