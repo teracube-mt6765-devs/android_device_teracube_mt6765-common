@@ -146,6 +146,7 @@ PRODUCT_PACKAGES += \
 
 # Bluetooth
 PRODUCT_PACKAGES += \
+    android.hardware.bluetooth@1.1.vendor \
     libbluetooth_audio_session.vendor
 
 # Configstore
@@ -223,9 +224,8 @@ PRODUCT_PACKAGES += \
     android.hardware.nfc@1.2-service.st
 
 PRODUCT_PACKAGES += \
-    android.hardware.nfc@1.0 \
-    android.hardware.nfc@1.1 \
-    android.hardware.nfc@1.2
+    android.hardware.nfc@1.2 \
+    android.hardware.nfc@1.2.vendor
 
 PRODUCT_COPY_FILES += \
     $(call find-copy-subdir-files,*,$(LOCAL_PATH)/configs/nfc/,$(TARGET_COPY_OUT_VENDOR)/etc)
@@ -294,7 +294,10 @@ PRODUCT_PACKAGES += \
     android.hardware.radio@1.5 \
     android.hardware.radio.config@1.1 \
     android.hardware.radio.config@1.2 \
-    android.hardware.radio.deprecated@1.0
+    android.hardware.radio.deprecated@1.0 \
+    android.hardware.radio@1.5.vendor \
+    android.hardware.radio.config@1.2.vendor \
+    android.hardware.radio.deprecated@1.0.vendor
 
 PRODUCT_PACKAGES += \
     libpcap.vendor
