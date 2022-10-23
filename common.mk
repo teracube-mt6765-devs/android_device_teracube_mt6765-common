@@ -373,11 +373,10 @@ PRODUCT_PACKAGES += \
 
 # WiFi
 PRODUCT_PACKAGES += \
-    hostapd \
     libwpa_client \
-    wpa_supplicant \
     android.hardware.wifi@1.0-service-lazy \
-    android.hardware.wifi.supplicant@1.0
+    android.hardware.wifi.supplicant@1.0 \
+    android.hardware.wifi.hostapd@1.0.vendor
 
 PRODUCT_PACKAGES += \
     TetheringConfigOverlay \
