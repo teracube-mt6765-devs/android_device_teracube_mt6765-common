@@ -123,7 +123,6 @@ PRODUCT_PACKAGES += \
     libtinycompress \
     libaudiofoundation \
     libaudiofoundation.vendor \
-    libtinycompress.vendor \
     libopus \
     libvpx \
     libvorbisidec
@@ -143,10 +142,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     android.hardware.biometrics.fingerprint@2.1-service.teracube
 
-# Bluetooth
-PRODUCT_PACKAGES += \
-    libbluetooth_audio_session.vendor
-
 # Configstore
 PRODUCT_PACKAGES += \
     android.hardware.configstore@1.1-service
@@ -161,7 +156,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.graphics.composer@2.1-service \
     android.hardware.graphics.composer@2.1-resources \
-    android.hardware.graphics.composer@2.1-impl \
     android.hardware.memtrack@1.0-impl \
     android.hardware.memtrack@1.0-service \
     libdrm.vendor \
@@ -179,14 +173,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     fastbootd
 
-# FM Radio (modified)
-PRODUCT_PACKAGES += \
-    FMRadio
-
-# GPU
-PRODUCT_PACKAGES += \
-    android.hardware.gpu@1.0-service
-
 # Health
 PRODUCT_PACKAGES += \
     android.hardware.health@2.1-impl \
@@ -202,12 +188,6 @@ PRODUCT_PACKAGES += \
     android.hidl.base@1.0 \
     android.hidl.manager@1.0 \
     android.hidl.memory.block@1.0
-
-# Health
-PRODUCT_PACKAGES += \
-    android.hardware.health@2.1-service \
-    android.hardware.health@2.1-impl \
-    android.hardware.health@2.0-impl-2.1
 
 # Keylayouts
 PRODUCT_COPY_FILES += \
@@ -427,7 +407,6 @@ PRODUCT_PACKAGES += \
 
 # WiFi
 PRODUCT_PACKAGES += \
-    libwpa_client \
     android.hardware.wifi@1.0-service-lazy \
     android.hardware.wifi.supplicant@1.0 \
     android.hardware.wifi.hostapd@1.0.vendor
