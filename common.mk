@@ -156,7 +156,8 @@ PRODUCT_PACKAGES += \
 # Charger
 PRODUCT_PACKAGES += \
     android.hardware.health@2.0 \
-    libsuspend
+    libsuspend \
+    libshim_showlogo
 
 # Display
 PRODUCT_PACKAGES += \
