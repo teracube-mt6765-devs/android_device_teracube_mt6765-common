@@ -1118,8 +1118,6 @@ vendor/bin/STFlashTool
 vendor/bin/st_factorytests-vendor
 vendor/bin/nfcstackp-vendor
 vendor/firmware/st21nfc_fw7.bin
-vendor/lib/nfc_nci.st21nfc.st.so
-vendor/lib64/nfc_nci.st21nfc.st.so
 
 # NVRAM
 vendor/bin/nvram_daemon
