@@ -334,6 +334,12 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libsensorndkbridge
 
+# Shims
+PRODUCT_PACKAGES += \
+    android.hardware.light-V1-ndk_platform.vendor:64 \
+    android.hardware.power-V1-ndk_platform.vendor:64 \
+    android.hardware.vibrator-V1-ndk_platform.vendor:64
+
 # Thermal
 PRODUCT_PACKAGES += \
     android.hardware.thermal@1.0-impl
