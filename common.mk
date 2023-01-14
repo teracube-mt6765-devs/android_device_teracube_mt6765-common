@@ -204,12 +204,6 @@ PRODUCT_PACKAGES += \
     android.hidl.manager@1.0 \
     android.hidl.memory.block@1.0
 
-# Health
-PRODUCT_PACKAGES += \
-    android.hardware.health@2.1-service \
-    android.hardware.health@2.1-impl \
-    android.hardware.health@2.0-impl-2.1
-
 # Keylayouts
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/keylayouts/mtk-kpd.kl:$(TARGET_COPY_OUT_SYSTEM)/usr/keylayout/mtk-kpd.kl
